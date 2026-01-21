@@ -1,4 +1,10 @@
 enum Role {
-  ADMIN
-  MEMBER
+  SUPER_ADMIN
+  ORG_ADMIN
+  ORG_MEMBER
+}
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  DONE
 }
