@@ -3,6 +3,7 @@ import { Router } from "express";
 import { authRoutes } from "../modules/auth/auth.route";
 import { OrganizationRoutes } from "../modules/organization/organization.route";
 import { UserRoutes } from "../modules/user/user.route";
+import { TaskRoutes } from "../modules/task/task.route";
 
 export const router = Router();
 interface IModuleRoutes {
@@ -21,6 +22,10 @@ const moduleRoutes: IModuleRoutes[] = [
   {
     path: "/users",
     route: UserRoutes,
+  },
+  {
+    path: "/tasks",
+    route: TaskRoutes,
   },
 ];
 

@@ -69,7 +69,6 @@ const deleteMyOrgMember = async (
     req.params.memberId,
     req.user,
     );
-    console.log(req.params.memberId)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
