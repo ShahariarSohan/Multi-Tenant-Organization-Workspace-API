@@ -61,6 +61,7 @@ const globalErrorHandler = (
 
 
   const sanitizedError = sanitizeError(error);
+  
 
   res.status(statusCode).json({
     success,

@@ -64,6 +64,18 @@ const logoutUser = catchAsync(async (req: Request, res: Response) => {
     data: null,
   });
 })
+const getMe = catchAsync(async (req: Request, res: Response) => {
+  const decodedUser = req.cookies;
+
+  const result = await authService.getMe(decodedUser);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "User retrieved successfully",
+    data: result,
+  });
+});
 export const authController = {
-  loginUser,logoutUser
+  loginUser,logoutUser,getMe
 };

@@ -51,7 +51,28 @@ const loginUser = async (payload: { email: string; password: string }) => {
   };
 };
 
+const getMe = async (decodedUser: any) => {
+  const accessToken = decodedUser.accessToken;
+  const decodedData = jwtHelpers.verifyToken(
+    accessToken,
+    envVariables.ACCESS_TOKEN_SECRET as Secret,
+  );
 
+  const userData = await prisma.user.findUniqueOrThrow({
+    where: {
+      email: decodedData.email,
+    },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      createdAt: true,
+      updatedAt: true,
+    },
+  });
+
+  return userData;
+};
 export const authService = {
-  loginUser,
+  loginUser,getMe
 };
