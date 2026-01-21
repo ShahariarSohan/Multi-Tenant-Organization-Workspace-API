@@ -24,7 +24,7 @@ const authGuard = (...roles: string[]) => {
         token,
         envVariables.ACCESS_TOKEN_SECRET as string
       );
-
+      console.log(verifiedUser)
       req.user = verifiedUser;
 
       if (roles.length && !roles.includes(verifiedUser.role)) {

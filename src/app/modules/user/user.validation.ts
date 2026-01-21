@@ -19,8 +19,3 @@ export const updateOrgMemberSchema = z.object({
  
 });
 
-export const deleteOrgMemberSchema = z.object({
- 
-    memberId: z.string()
-
-});

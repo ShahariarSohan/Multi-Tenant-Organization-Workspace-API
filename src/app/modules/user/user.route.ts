@@ -2,7 +2,7 @@ import express from "express";
 import { UserController } from "./user.controller";
 import authGuard from "../../middlewares/authGuard";
 import { validateRequest } from "../../middlewares/validateRequest";
-import { createOrgAdminSchema, createOrgMemberSchema, deleteOrgMemberSchema, updateOrgMemberSchema } from "./user.validation";
+import { createOrgAdminSchema, createOrgMemberSchema, updateOrgMemberSchema } from "./user.validation";
 import { UserRole } from "../../interfaces/userRole";
 
 const router = express.Router();
@@ -36,7 +36,6 @@ router.patch(
 router.delete(
   "/org-member/:memberId",
   authGuard(UserRole.ORG_ADMIN),
-  validateRequest(deleteOrgMemberSchema),
   UserController.deleteMyOrgMember,
 );
 export const UserRoutes = router;

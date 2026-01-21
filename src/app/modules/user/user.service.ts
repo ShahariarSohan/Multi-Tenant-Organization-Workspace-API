@@ -103,8 +103,6 @@ const createOrgMember = async (payload: User, creator: JwtPayload) => {
   });
 };
 
-
-
 const getMyOrgMembers = async (organizationId: string) => {
   return prisma.user.findMany({
     where: { organizationId,role:UserRole.ORG_MEMBER },
@@ -154,7 +152,7 @@ const deleteMyOrgMember = async (memberId: string, creator: User) => {
     );
   }
 
-  const member = await prisma.user.findUnique({ where: { id: memberId } });
+    const member = await prisma.user.findUnique({ where: { id: memberId } });
 
   if (!member || member.organizationId !== creator.organizationId) {
     throw new AppError(
@@ -163,7 +161,12 @@ const deleteMyOrgMember = async (memberId: string, creator: User) => {
     );
   }
 
-  return prisma.user.delete({ where: { id: memberId } });
+    await prisma.user.delete({
+      where: { id: memberId },
+    });
+
+    return null;
+    
 };
 
 

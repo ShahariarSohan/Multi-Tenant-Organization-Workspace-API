@@ -29,8 +29,10 @@ const loginUser = async (payload: { email: string; password: string }) => {
   }
   const accessToken = jwtHelpers.generateToken(
     {
+      id:userData.id,
       email: userData.email,
       role: userData.role,
+      organizationId:userData.organizationId
     },
     envVariables.ACCESS_TOKEN_SECRET as Secret,
     envVariables.ACCESS_TOKEN_EXPIRES_IN as string
