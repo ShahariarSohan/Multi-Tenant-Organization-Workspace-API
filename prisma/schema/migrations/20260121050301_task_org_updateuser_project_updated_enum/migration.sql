@@ -10,7 +10,7 @@ CREATE TYPE "TaskStatus" AS ENUM ('PENDING', 'IN_PROGRESS', 'DONE');
 
 -- AlterEnum
 BEGIN;
-CREATE TYPE "Role_new" AS ENUM ('SUPER_ADMIN', 'ORG_ADMIN', 'ORG_MEMBER');
+CREATE TYPE "Role_new" AS ENUM ('PLATFORM_ADMIN', 'ORG_ADMIN', 'ORG_MEMBER');
 ALTER TABLE "public"."users" ALTER COLUMN "role" DROP DEFAULT;
 ALTER TABLE "users" ALTER COLUMN "role" TYPE "Role_new" USING ("role"::text::"Role_new");
 ALTER TYPE "Role" RENAME TO "Role_old";

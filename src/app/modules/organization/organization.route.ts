@@ -11,14 +11,14 @@ const router = express.Router();
 
 router.post(
   "/",
-  authGuard(UserRole.SUPER_ADMIN),
+  authGuard(UserRole.PLATFORM_ADMIN),
   validateRequest(createOrganizationSchema),
   OrganizationController.createOrganization,
 );
 
 router.get(
   "/",
-  authGuard(UserRole.SUPER_ADMIN),
+  authGuard(UserRole.PLATFORM_ADMIN),
   OrganizationController.getAllOrganizations,
 );
 

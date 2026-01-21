@@ -3,38 +3,35 @@ import { prisma } from "../config/prisma";
 import { envVariables } from "../config/env";
 import { UserRole } from "../interfaces/userRole";
 
-const seedSuperAdmin = async () => {
+const seedPlatformAdmin = async () => {
   try {
-   
-    const isSuperAdminExist = await prisma.user.findFirst({
+    const isPlatformAdminExist = await prisma.user.findFirst({
       where: {
-        role: UserRole.SUPER_ADMIN, 
+        role: UserRole.PLATFORM_ADMIN,
       },
     });
 
-    if (isSuperAdminExist) {
-      console.log("Super Admin already exists!");
+    if (isPlatformAdminExist) {
+      console.log("Platform Admin already exists!");
       return;
     }
 
-  
     const hashedPassword = await bcrypt.hash(
-      envVariables.SUPER_ADMIN_PASSWORD as string,
+      envVariables.PLATFORM_ADMIN_PASSWORD as string,
       Number(envVariables.BCRYPT_SALT_ROUND) || 10,
     );
 
-   
-    const superAdmin = await prisma.user.create({
+    const platformAdmin = await prisma.user.create({
       data: {
-        name: envVariables.SUPER_ADMIN_NAME as string,
-        email: envVariables.SUPER_ADMIN_EMAIL as string,
+        name: envVariables.PLATFORM_ADMIN_NAME as string,
+        email: envVariables.PLATFORM_ADMIN_EMAIL as string,
         password: hashedPassword,
-        role: UserRole.SUPER_ADMIN, 
-        organizationId: null, 
+        role: UserRole.PLATFORM_ADMIN,
+        organizationId: null,
       },
     });
 
-    console.log("Super Admin Created Successfully!", superAdmin);
+    console.log("Super Admin Created Successfully!", platformAdmin);
   } catch (err) {
     console.error("Error seeding Super Admin:", err);
   } finally {
@@ -42,4 +39,4 @@ const seedSuperAdmin = async () => {
   }
 };
 
-export default seedSuperAdmin;
+export default seedPlatformAdmin;
