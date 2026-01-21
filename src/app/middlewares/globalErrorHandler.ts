@@ -8,9 +8,9 @@ import AppError from "../errorHelpers/AppError";
 import { envVariables } from "../config/env";
 import { Prisma } from "@prisma/client";
 
-// Sanitize error to prevent exposing sensitive information in production
+
 const sanitizeError = (error: any) => {
-  // Don't expose Prisma errors in production
+ 
   if (envVariables.NODE_ENV === "production" && error.code?.startsWith("P")) {
     return {
       message: "Database operation failed",
@@ -59,7 +59,7 @@ const globalErrorHandler = (
     error = err;
   }
 
-  // Sanitize error before sending response
+
   const sanitizedError = sanitizeError(error);
 
   res.status(statusCode).json({

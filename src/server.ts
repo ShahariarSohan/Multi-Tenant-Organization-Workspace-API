@@ -4,6 +4,7 @@ import app from "./app";
 
 import { envVariables } from "./app/config/env";
 import { prisma } from "./app/config/prisma";
+import seedSuperAdmin from "./app/utils/seedAdmin";
 
 
 let server: Server | null = null;
@@ -54,9 +55,7 @@ async function gracefulShutdown(signal: string) {
   }
 }
 
-/**
- * Handle system signals and unexpected errors.
- */
+
 function handleProcessEvents() {
   process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));
   process.on("SIGINT", () => gracefulShutdown("SIGINT"));
@@ -73,7 +72,7 @@ function handleProcessEvents() {
 }
 
 (async () => {
-  // await seedSuperAdmin();
+  await seedSuperAdmin();
   await connectToDB();
   await startServer();
 })();
