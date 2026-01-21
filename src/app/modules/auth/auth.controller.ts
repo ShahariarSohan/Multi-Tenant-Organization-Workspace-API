@@ -43,7 +43,27 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
     },
   });
 });
+const logoutUser = catchAsync(async (req: Request, res: Response) => {
+  // Clear cookies
+  res.clearCookie("accessToken", {
+    secure: true,
+    httpOnly: true,
+    sameSite: "none",
+  });
 
+  res.clearCookie("refreshToken", {
+    secure: true,
+    httpOnly: true,
+    sameSite: "none",
+  });
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Logged out successfully!",
+    data: null,
+  });
+})
 export const authController = {
-  loginUser,
+  loginUser,logoutUser
 };
