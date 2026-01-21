@@ -104,6 +104,7 @@ const createOrgMember = async (payload: User, creator: JwtPayload) => {
 };
 
 const getMyOrgMembers = async (organizationId: string) => {
+  
   return prisma.user.findMany({
     where: { organizationId,role:UserRole.ORG_MEMBER },
     select: {

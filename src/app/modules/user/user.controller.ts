@@ -34,12 +34,12 @@ const getMyOrgMembers = async (
   res: Response,
 ) => {
     
-  const result = await UserService.getMyOrgMembers(req.user.OrganizationId);
+  const result = await UserService.getMyOrgMembers(req.user.organizationId);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Users retrieved successfully",
+    message: "My Organization members retrieved successfully",
     data: result,
   });
 };

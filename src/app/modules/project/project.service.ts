@@ -7,11 +7,25 @@ import { prisma } from "../../config/prisma";
 import { UserRole } from "../../interfaces/userRole";
 import { JwtPayload } from "jsonwebtoken";
 
-const createProject = async (payload: Project, user:JwtPayload) => {
+const createProject = async (payload: { name: string }, user: JwtPayload) => {
   if (user.role !== UserRole.ORG_ADMIN) {
     throw new AppError(
       httpStatus.FORBIDDEN,
       "Only Organization Admin can create projects",
+    );
+  }
+
+  const project = await prisma.project.findFirst({
+    where: {
+      name: payload.name,
+      organizationId: user.organizationId,
+    },
+  });
+
+  if (project) {
+    throw new AppError(
+      httpStatus.CONFLICT,
+      "Project already exists in your organization",
     );
   }
 
@@ -22,6 +36,7 @@ const createProject = async (payload: Project, user:JwtPayload) => {
     },
   });
 };
+
 
 const getMyOrganizationProjects = async (user:JwtPayload) => {
   if (user.role !== UserRole.ORG_ADMIN) {
@@ -58,7 +73,8 @@ const deleteProject = async (projectId: string, user:JwtPayload) => {
     );
   }
 
-  return prisma.project.delete({ where: { id: projectId } });
+  await prisma.project.delete({ where: { id: projectId } });
+  return null;
 };
 
 export const ProjectService = {
