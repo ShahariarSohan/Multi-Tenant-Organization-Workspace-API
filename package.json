@@ -1,10 +1,10 @@
 {
-  "name": "hidden-dependency-risk-tracker-server",
+  "name": "multi-tenant-organization-workspace-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "prisma": {
-    "schema": "./prisma/schema/"
+    "schema": "./prisma/schema"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,14 +26,14 @@
     "@types/node": "^24.10.3",
     "@types/nodemailer": "^7.0.5",
     "eslint": "^9.39.1",
-    "prisma": "^6.19.1",
+    "prisma": "^6.19.2",
     "ts-node-dev": "^2.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.48.0"
   },
   "dependencies": {
-    "@prisma/client": "^6.19.1",
+    "@prisma/client": "^6.19.2",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",

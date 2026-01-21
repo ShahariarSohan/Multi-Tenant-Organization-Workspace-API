@@ -1,17 +1,4 @@
 enum Role {
   ADMIN
-  MANAGER
-  EMPLOYEE
-}
-
-enum TaskStatus {
-  PENDING
-  IN_PROGRESS
-  CANCELLED
-  COMPLETED
-}
-enum Status {
-  ACTIVE
-  INACTIVE
-  DELETED
+  MEMBER
 }

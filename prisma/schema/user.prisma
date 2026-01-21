@@ -2,8 +2,7 @@ model User {
   id        String     @id @default(uuid())
   email     String     @unique
   password  String
-  role      Role       @default(EMPLOYEE)
-  status    Status     @default(ACTIVE)
+  role      Role       @default(MEMBER)
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   
