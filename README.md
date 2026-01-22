@@ -190,7 +190,7 @@ An ER diagram is included showing:
 - Relationships
 - Foreign keys
 
-📎 Location: `./ER_Diagram.png`
+- [ER Diagram](./ER_Diagram.png)
 
 ---
 
