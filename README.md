@@ -186,7 +186,8 @@ A relational database is the **most professional and reliable choice**.
 ## ER Diagram
 
 An ER diagram is included showing:
-- Tables,Relationships,ForeignKey
+- Tables,Relationships,PrimaryKey,ForeignKey
+  
 - [ER Diagram](./ER_Diagram.png)
 
 ---
