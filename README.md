@@ -167,7 +167,7 @@ A relational database is the **most professional and reliable choice**.
 | Method | Endpoint | Description |
 |------|--------|-------------|
 | POST | /api/tasks | Create task |
-| GET | /api/tasks/assigned-tasks | Org Admin: all org tasks |
+| GET | /api/tasks/assigned-tasks | Org Admin: my org tasks |
 | GET | /api/tasks/my-tasks | Member: assigned tasks |
 | PATCH | /api/tasks/:taskId | Update task |
 | DELETE | /api/tasks/:taskId | Delete task |
@@ -228,7 +228,7 @@ Password: orgmember1
 ---
 
 ## Folder Structure
-
+```
 src/
 ├─ app/
 │ ├─ config/
@@ -245,7 +245,7 @@ src/
 ├─ prisma/schema/
 └─ app.ts
 └─ server.ts
-
+```
 
 
 ---
