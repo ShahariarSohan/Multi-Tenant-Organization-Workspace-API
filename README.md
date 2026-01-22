@@ -186,10 +186,7 @@ A relational database is the **most professional and reliable choice**.
 ## ER Diagram
 
 An ER diagram is included showing:
-- Tables
-- Relationships
-- Foreign keys
-
+- Tables,Relationships,ForeignKey
 - [ER Diagram](./ER_Diagram.png)
 
 ---
@@ -224,7 +221,7 @@ Password: orgmember1
 📎 Files:
 - 👉 [Test Endpoints In Postman](https://shahariarsohan.postman.co/workspace/Shahariar-Sohan's-Workspace~e9944265-e715-442a-8eb7-30fe6aa38c65/collection/45506624-4f5e1c26-3402-4dc5-b284-08da17fb6833?action=share&source=copy-link&creator=45506624)
 - Can also import postman collection from github project root to postman application.
-- [Import it by downloading or copying it](./Multi-Tenant-Organization-Workspace-Api.postman_collection.json)
+- [Import it by downloading or copying it](./Multi-Tenant-Api.postman_collection.json)
 
 ---
 
