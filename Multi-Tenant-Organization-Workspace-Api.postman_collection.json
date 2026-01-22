@@ -17,7 +17,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "// {\r\n//   \"email\": \"orgadmin1@org.com\",\r\n//   \"password\":\"orgadmin1\"\r\n// }\r\n{\r\n  \"email\": \"orgadmin2@org.com\",\r\n  \"password\":\"orgadmin2\"\r\n}\r\n// {\r\n   \r\n//     \"email\": \"orgmember4@org.com\",\r\n//     \"password\":\"orgmember4\"\r\n// }\r\n// {\r\n//   \"email\": \"platformadmin@gmail.com\",\r\n//   \"password\":\"platformadmin\"\r\n// }",
+              "raw": "// {\r\n//   \"email\": \"orgadmin1@org.com\",\r\n//   \"password\":\"orgadmin1\"\r\n// }\r\n// {\r\n//   \"email\": \"orgmember1@org.com\",\r\n//   \"password\": \"orgmember1\"\r\n// }\r\n{\r\n  \"email\": \"orgadmin2@org.com\",\r\n  \"password\":\"orgadmin2\"\r\n}\r\n// {\r\n   \r\n//     \"email\": \"orgmember4@org.com\",\r\n//     \"password\":\"orgmember4\"\r\n// }\r\n// {\r\n//   \"email\": \"platformadmin@gmail.com\",\r\n//   \"password\":\"platformadmin\"\r\n// }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -25,11 +25,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/auth/login",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/auth/login",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "auth",
                 "login"
               ]
@@ -43,11 +47,15 @@
             "method": "POST",
             "header": [],
             "url": {
-              "raw": "{{MultiTenantURL}}/auth/logout",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/auth/logout",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "auth",
                 "logout"
               ]
@@ -68,11 +76,15 @@
               "raw": "{\r\n  \"email\": \"superadmin@gmail.com\",\r\n  \"password\":\"superadmin\"\r\n}\r\n"
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/auth/me",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/auth/me",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "auth",
                 "me"
               ]
@@ -100,11 +112,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/organizations",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/organizations",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "organizations"
               ]
             }
@@ -124,11 +140,15 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/organizations",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/organizations",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "organizations"
               ]
             }
@@ -155,11 +175,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/users/org-admin",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/users/org-admin",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "users",
                 "org-admin"
               ]
@@ -174,7 +198,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"OrgMember4\",\r\n  \"email\": \"orgmember4@org.com\",\r\n  \"password\": \"orgmember4\"\r\n}",
+              "raw": "{\r\n  \"name\": \"OrgMember1\",\r\n  \"email\": \"orgmember1@org.com\",\r\n  \"password\": \"orgmember1\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -182,11 +206,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/users/org-member",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/users/org-member",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "users",
                 "org-member"
               ]
@@ -212,11 +240,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/users/org-member",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/users/org-member",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "users",
                 "org-member"
               ]
@@ -239,11 +271,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/users/org-member/ff356fa7-3ec4-47e6-a84d-99dd5dc96228",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/users/org-member/ff356fa7-3ec4-47e6-a84d-99dd5dc96228",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "users",
                 "org-member",
                 "ff356fa7-3ec4-47e6-a84d-99dd5dc96228"
@@ -258,11 +294,15 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{MultiTenantURL}}/users/org-member/4d27a3df-1a83-4ecc-9b3d-7049b7895b44",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/users/org-member/4d27a3df-1a83-4ecc-9b3d-7049b7895b44",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "users",
                 "org-member",
                 "4d27a3df-1a83-4ecc-9b3d-7049b7895b44"
@@ -289,11 +329,15 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/projects/my-organization",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/projects/my-organization",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "projects",
                 "my-organization"
               ]
@@ -316,11 +360,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/projects",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/projects",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "projects"
               ]
             }
@@ -342,11 +390,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/projects/aa36f1e3-e7ea-433d-95d4-ada62e3ce806",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/projects/aa36f1e3-e7ea-433d-95d4-ada62e3ce806",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "projects",
                 "aa36f1e3-e7ea-433d-95d4-ada62e3ce806"
               ]
@@ -364,11 +416,15 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/projects/43476247-4a43-402a-80c5-45aa6092a541",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/projects/43476247-4a43-402a-80c5-45aa6092a541",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "projects",
                 "43476247-4a43-402a-80c5-45aa6092a541"
               ]
@@ -394,11 +450,15 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/tasks/assigned-tasks",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/tasks/assigned-tasks",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "tasks",
                 "assigned-tasks"
               ]
@@ -419,11 +479,15 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/tasks/my-tasks",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/tasks/my-tasks",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "tasks",
                 "my-tasks"
               ]
@@ -446,11 +510,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/tasks",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/tasks",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "tasks"
               ]
             }
@@ -472,11 +540,15 @@
               }
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/tasks/b01abde1-f69d-4cbc-ba88-06ee1f4b1bb1",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/tasks/b01abde1-f69d-4cbc-ba88-06ee1f4b1bb1",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "tasks",
                 "b01abde1-f69d-4cbc-ba88-06ee1f4b1bb1"
               ]
@@ -494,11 +566,15 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{MultiTenantURL}}/tasks/b01abde1-f69d-4cbc-ba88-06ee1f4b1bb1",
+              "raw": "https://multi-tenant-organization-workspace-iota.vercel.app/api/tasks/b01abde1-f69d-4cbc-ba88-06ee1f4b1bb1",
+              "protocol": "https",
               "host": [
-                "{{MultiTenantURL}}"
+                "multi-tenant-organization-workspace-iota",
+                "vercel",
+                "app"
               ],
               "path": [
+                "api",
                 "tasks",
                 "b01abde1-f69d-4cbc-ba88-06ee1f4b1bb1"
               ]

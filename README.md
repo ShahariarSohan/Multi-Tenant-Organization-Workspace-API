@@ -222,8 +222,9 @@ Password: orgmember1
 - Ready to test immediately after import
 
 📎 Files:
-- 👉 [Test Endpoints In Postman](https://shahariarsohan.postman.co/workspace/Shahariar-Sohan's-Workspace~e9944265-e715-442a-8eb7-30fe6aa38c65/collection/45506624-4f5e1c26-3402-4dc5-b284-08da17fb6833?action=share&creator=45506624&active-environment=45506624-198bf077-52f1-4c1a-a786-6a9a027523fb)
+- 👉 [Test Endpoints In Postman](https://shahariarsohan.postman.co/workspace/Shahariar-Sohan's-Workspace~e9944265-e715-442a-8eb7-30fe6aa38c65/collection/45506624-4f5e1c26-3402-4dc5-b284-08da17fb6833?action=share&source=copy-link&creator=45506624)
 - Can also import postman collection from github project root to postman application.
+- [Import it by downloading or copying it](./Multi-Tenant-Organization-Workspace-Api.postman_collection.json)
 
 ---
 
