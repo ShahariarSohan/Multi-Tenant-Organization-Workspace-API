@@ -212,15 +212,29 @@ Password: orgmember1
 
 ## Postman Collection
 
+
 ### Included
 - Hosted API URL
 - Authentication already configured
 - Headers and tokens pre-filled
 - Ready to test immediately after import
 
+📬 Postman Usage Notes
+
+This project includes a fully configured Postman Collection that is ready to use immediately after import.
+No additional setup, environment variables, or manual token configuration is required.
+
+✅ How to Use the Postman Collection
+
+- Download the provided Postman Collection JSON file
+- Open Postman
+- Click Import
+- Import the JSON file
+- All requests will be available in organized folders
+
 📎 Files:
 - 👉 [Test Endpoints In Postman](https://shahariarsohan.postman.co/workspace/Shahariar-Sohan's-Workspace~e9944265-e715-442a-8eb7-30fe6aa38c65/collection/45506624-4f5e1c26-3402-4dc5-b284-08da17fb6833?action=share&source=copy-link&creator=45506624)
-- Can also import postman collection from github project root to postman application.
+
 - [Import it by downloading or copying it](./Multi-Tenant-Api.postman_collection.json)
 
 ---
