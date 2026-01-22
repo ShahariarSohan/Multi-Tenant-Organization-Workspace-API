@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "prisma": {
-    "schema": "./prisma/schema"
+    "schema": "./prisma/schema/"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
