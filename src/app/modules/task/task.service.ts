@@ -14,7 +14,18 @@ const createTask = async (payload: Task, creator: JwtPayload) => {
       "Only Organization Admin can create tasks",
     );
   }
+  const task = await prisma.task.findFirst({
+    where: {
+      title: payload.title,
+    },
+  });
 
+  if (task) {
+    throw new AppError(
+      httpStatus.CONFLICT,
+      "task already exists in your organization or other organization",
+    );
+  }
   const project = await prisma.project.findUnique({
     where: { id: payload.projectId },
   });
@@ -36,7 +47,14 @@ const createTask = async (payload: Task, creator: JwtPayload) => {
     },
     include: {
       project: true,
-      assignedTo: true,
+      assignedTo: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+        },
+      },
     },
   });
 };
@@ -51,7 +69,17 @@ const getAssignedTasks = async (user: JwtPayload) => {
 
   return prisma.task.findMany({
     where: { project: { organizationId: user.organizationId } },
-    include: { project: true, assignedTo: true },
+    include: {
+      project: true,
+      assignedTo: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+        },
+      },
+    },
   });
 };
 
@@ -62,10 +90,9 @@ const getMyTasks = async (user: JwtPayload) => {
 
   return prisma.task.findMany({
     where: {
-      assignedToId: user.userId,
+      assignedToId: user.id,
       project: { organizationId: user.organizationId },
     },
-    include: { project: true, assignedTo: true },
   });
 };
 
@@ -88,7 +115,17 @@ const updateTask = async (taskId: string, payload: Partial<Task>, user: JwtPaylo
   return prisma.task.update({
     where: { id: taskId },
     data: payload,
-    include: { project: true, assignedTo: true },
+    include: {
+      project: true,
+      assignedTo: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+        },
+      },
+    },
   });
 };
 
@@ -108,10 +145,10 @@ const deleteTask = async (taskId: string, user: JwtPayload) => {
     throw new AppError(httpStatus.NOT_FOUND, "Task not found");
   }
 
-  return prisma.task.delete({
+  await prisma.task.delete({
     where: { id: taskId },
-    include: { project: true, assignedTo: true },
   });
+  return null;
 };
 
 export const TaskService = {

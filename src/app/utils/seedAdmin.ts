@@ -31,9 +31,9 @@ const seedPlatformAdmin = async () => {
       },
     });
 
-    console.log("Super Admin Created Successfully!", platformAdmin);
+    console.log("Platform Admin Created Successfully!", platformAdmin);
   } catch (err) {
-    console.error("Error seeding Super Admin:", err);
+    console.error("Error seeding Platform Admin:", err);
   } finally {
     await prisma.$disconnect();
   }
