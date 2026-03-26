@@ -1,6 +1,3 @@
-
-
-
 import AppError from "../../errorHelpers/AppError";
 import httpStatus from "http-status-codes";
 import { prisma } from "../../config/prisma";
@@ -38,8 +35,7 @@ const createProject = async (payload: { name: string }, user: JwtPayload) => {
   });
 };
 
-
-const getMyOrganizationProjects = async (user:JwtPayload) => {
+const getMyOrganizationProjects = async (user: JwtPayload) => {
   if (user.role !== UserRole.ORG_ADMIN) {
     throw new AppError(
       httpStatus.FORBIDDEN,
@@ -53,7 +49,11 @@ const getMyOrganizationProjects = async (user:JwtPayload) => {
   });
 };
 
-const updateProject = async (projectId: string, payload: Partial<Project>, user:JwtPayload) => {
+const updateProject = async (
+  projectId: string,
+  payload: Partial<Project>,
+  user: JwtPayload,
+) => {
   const project = await prisma.project.findUnique({ where: { id: projectId } });
   if (!project || project.organizationId !== user.organizationId) {
     throw new AppError(
@@ -65,7 +65,7 @@ const updateProject = async (projectId: string, payload: Partial<Project>, user:
   return prisma.project.update({ where: { id: projectId }, data: payload });
 };
 
-const deleteProject = async (projectId: string, user:JwtPayload) => {
+const deleteProject = async (projectId: string, user: JwtPayload) => {
   const project = await prisma.project.findUnique({ where: { id: projectId } });
   if (!project || project.organizationId !== user.organizationId) {
     throw new AppError(

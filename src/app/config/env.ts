@@ -22,7 +22,6 @@ interface EnvConfig {
 
 const loadEnvVariables = (): EnvConfig => {
   const requiredVariables: string[] = [
-    "PORT",
     "DATABASE_URL",
     "PLATFORM_ADMIN_EMAIL",
     "PLATFORM_ADMIN_NAME",
@@ -40,7 +39,7 @@ const loadEnvVariables = (): EnvConfig => {
   });
 
   return {
-    PORT: process.env.PORT as string,
+    PORT: (process.env.PORT as string) || "5000",
     NODE_ENV: process.env.NODE_ENV as string,
     DATABASE_URL: process.env.DATABASE_URL as string,
     PLATFORM_ADMIN_NAME: process.env.PLATFORM_ADMIN_NAME as string,

@@ -16,16 +16,15 @@ const createOrgAdmin = async (payload: User, creator: JwtPayload) => {
       "Only Platform Admin can create Org Admins",
     );
   }
-    if (payload.organizationId) {
-     const organization = await prisma.organization.findUnique({
-       where: { id: payload.organizationId },
-     });
+  if (payload.organizationId) {
+    const organization = await prisma.organization.findUnique({
+      where: { id: payload.organizationId },
+    });
 
-     if (!organization) {
-       throw new AppError(httpStatus.NOT_FOUND, "Organization does not exist");
-     }
-}
- 
+    if (!organization) {
+      throw new AppError(httpStatus.NOT_FOUND, "Organization does not exist");
+    }
+  }
 
   const existingAdmin = await prisma.user.findFirst({
     where: {
@@ -63,7 +62,6 @@ const createOrgAdmin = async (payload: User, creator: JwtPayload) => {
     },
   });
 };
-
 
 const createOrgMember = async (payload: User, creator: JwtPayload) => {
   if (creator.role !== UserRole.ORG_ADMIN) {
@@ -105,9 +103,8 @@ const createOrgMember = async (payload: User, creator: JwtPayload) => {
 };
 
 const getMyOrgMembers = async (organizationId: string) => {
-  
   return prisma.user.findMany({
-    where: { organizationId,role:UserRole.ORG_MEMBER },
+    where: { organizationId, role: UserRole.ORG_MEMBER },
     select: {
       id: true,
       name: true,
@@ -120,7 +117,7 @@ const getMyOrgMembers = async (organizationId: string) => {
 
 const updateMyOrgMember = async (
   memberId: string,
-  payload:Partial<User>,
+  payload: Partial<User>,
   creator: User,
 ) => {
   if (creator.role !== UserRole.ORG_ADMIN) {
@@ -131,8 +128,7 @@ const updateMyOrgMember = async (
   }
 
   const member = await prisma.user.findUnique({ where: { id: memberId } });
-  
-    
+
   if (!member || member.organizationId !== creator.organizationId) {
     throw new AppError(
       httpStatus.NOT_FOUND,
@@ -154,7 +150,7 @@ const deleteMyOrgMember = async (memberId: string, creator: User) => {
     );
   }
 
-    const member = await prisma.user.findUnique({ where: { id: memberId } });
+  const member = await prisma.user.findUnique({ where: { id: memberId } });
 
   if (!member || member.organizationId !== creator.organizationId) {
     throw new AppError(
@@ -163,15 +159,12 @@ const deleteMyOrgMember = async (memberId: string, creator: User) => {
     );
   }
 
-    await prisma.user.delete({
-      where: { id: memberId },
-    });
+  await prisma.user.delete({
+    where: { id: memberId },
+  });
 
-    return null;
-    
+  return null;
 };
-
-
 
 export const UserService = {
   createOrgAdmin,

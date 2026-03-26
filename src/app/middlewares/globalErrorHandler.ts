@@ -8,10 +8,7 @@ import AppError from "../errorHelpers/AppError";
 import { envVariables } from "../config/env";
 import { Prisma } from "../../../prisma/generated/client";
 
-
-
 const sanitizeError = (error: any) => {
- 
   if (envVariables.NODE_ENV === "production" && error.code?.startsWith("P")) {
     return {
       message: "Database operation failed",
@@ -25,10 +22,8 @@ const globalErrorHandler = (
   err: any,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
-  
-
   let statusCode = httpStatus.INTERNAL_SERVER_ERROR;
   const success = false;
   let message = err.message || "Something went wrong!";
@@ -60,9 +55,7 @@ const globalErrorHandler = (
     error = err;
   }
 
-
   const sanitizedError = sanitizeError(error);
-  
 
   res.status(statusCode).json({
     success,

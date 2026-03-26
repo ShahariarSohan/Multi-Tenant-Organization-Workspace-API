@@ -1,6 +1,3 @@
-
-
-
 import AppError from "../../errorHelpers/AppError";
 import httpStatus from "http-status-codes";
 import { JwtPayload } from "jsonwebtoken";
@@ -97,7 +94,11 @@ const getMyTasks = async (user: JwtPayload) => {
   });
 };
 
-const updateTask = async (taskId: string, payload: Partial<Task>, user: JwtPayload) => {
+const updateTask = async (
+  taskId: string,
+  payload: Partial<Task>,
+  user: JwtPayload,
+) => {
   if (user.role !== UserRole.ORG_ADMIN) {
     throw new AppError(
       httpStatus.FORBIDDEN,

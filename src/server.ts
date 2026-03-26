@@ -6,7 +6,6 @@ import { envVariables } from "./app/config/env";
 import { prisma } from "./app/config/prisma";
 import seedPlatformAdmin from "./app/utils/seedAdmin";
 
-
 let server: Server | null = null;
 
 const connectToDB = async () => {

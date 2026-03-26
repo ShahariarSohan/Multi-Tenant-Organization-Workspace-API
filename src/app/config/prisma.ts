@@ -1,5 +1,3 @@
-
-
 import { envVariables } from "./env";
 import { PrismaClient } from "../../../prisma/generated/client";
 
