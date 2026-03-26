@@ -1,7 +1,10 @@
+
 import bcrypt from "bcrypt";
-import { prisma } from "../config/prisma";
+
 import { envVariables } from "../config/env";
 import { UserRole } from "../interfaces/userRole";
+import { prisma } from "../config/prisma";
+
 
 const seedPlatformAdmin = async () => {
   try {

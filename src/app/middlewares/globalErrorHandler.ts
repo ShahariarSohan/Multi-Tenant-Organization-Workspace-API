@@ -6,7 +6,8 @@ import httpStatus from "http-status-codes";
 
 import AppError from "../errorHelpers/AppError";
 import { envVariables } from "../config/env";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/generated/client";
+
 
 
 const sanitizeError = (error: any) => {
@@ -26,7 +27,7 @@ const globalErrorHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  console.log({ err });
+  
 
   let statusCode = httpStatus.INTERNAL_SERVER_ERROR;
   const success = false;

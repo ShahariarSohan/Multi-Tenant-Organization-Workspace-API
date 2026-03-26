@@ -4,9 +4,10 @@ import { UserRole } from "../../interfaces/userRole";
 
 import httpStatus from "http-status-codes";
 import { envVariables } from "../../config/env";
-import { User } from "@prisma/client";
+
 import { JwtPayload } from "jsonwebtoken";
 import AppError from "../../errorHelpers/AppError";
+import { User } from "../../../../prisma/generated/client";
 
 const createOrgAdmin = async (payload: User, creator: JwtPayload) => {
   if (creator.role !== UserRole.PLATFORM_ADMIN) {

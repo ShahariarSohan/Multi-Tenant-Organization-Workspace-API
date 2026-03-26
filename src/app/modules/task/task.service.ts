@@ -1,11 +1,12 @@
 
 
-import { Task } from "@prisma/client";
+
 import AppError from "../../errorHelpers/AppError";
 import httpStatus from "http-status-codes";
 import { JwtPayload } from "jsonwebtoken";
 import { UserRole } from "../../interfaces/userRole";
 import { prisma } from "../../config/prisma";
+import { Task } from "../../../../prisma/generated/client";
 
 const createTask = async (payload: Task, creator: JwtPayload) => {
   if (creator.role !== UserRole.ORG_ADMIN) {

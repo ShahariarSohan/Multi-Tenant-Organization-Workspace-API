@@ -1,11 +1,12 @@
 
 
-import { Project } from "@prisma/client";
+
 import AppError from "../../errorHelpers/AppError";
 import httpStatus from "http-status-codes";
 import { prisma } from "../../config/prisma";
 import { UserRole } from "../../interfaces/userRole";
 import { JwtPayload } from "jsonwebtoken";
+import { Project } from "../../../../prisma/generated/client";
 
 const createProject = async (payload: { name: string }, user: JwtPayload) => {
   if (user.role !== UserRole.ORG_ADMIN) {
