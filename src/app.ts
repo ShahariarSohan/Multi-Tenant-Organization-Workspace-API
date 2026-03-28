@@ -20,7 +20,7 @@ app.set("trust proxy", 1);
 app.use("/api", router);
 
 app.get("/", (req: Request, res: Response) => {
-   res.status(200).send({
+   res.status(200).json({
      message: "Multi-Tenant Organization Workspace API Is Running...",
      environment: process.env.NODE_ENV,
      uptime: process.uptime().toFixed(2) + " sec",
