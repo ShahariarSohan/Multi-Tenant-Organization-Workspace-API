@@ -7,7 +7,7 @@ import { envVariables } from "../../config/env";
 
 import { JwtPayload } from "jsonwebtoken";
 import AppError from "../../errorHelpers/AppError";
-import { User } from "../../../../prisma/generated/client";
+import { User } from "../../../generated/prisma/client";
 
 const createOrgAdmin = async (payload: User, creator: JwtPayload) => {
   if (creator.role !== UserRole.PLATFORM_ADMIN) {

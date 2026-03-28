@@ -3,7 +3,7 @@ import httpStatus from "http-status-codes";
 import { JwtPayload } from "jsonwebtoken";
 import { UserRole } from "../../interfaces/userRole";
 import { prisma } from "../../config/prisma";
-import { Task } from "../../../../prisma/generated/client";
+import { Task } from "../../../generated/prisma/client";
 
 const createTask = async (payload: Task, creator: JwtPayload) => {
   if (creator.role !== UserRole.ORG_ADMIN) {

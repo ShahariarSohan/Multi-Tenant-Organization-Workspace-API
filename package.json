@@ -6,13 +6,13 @@
   "prisma": {
     "schema": "./prisma"
   },
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "prisma generate",
     "build": "prisma generate && tsc",
     "start": "node dist/server.js",
-    "dev": "tsx watch ./src/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
   },
   "keywords": [],
   "author": "Shahariar Sohan",

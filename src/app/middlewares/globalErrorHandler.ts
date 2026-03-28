@@ -6,7 +6,7 @@ import httpStatus from "http-status-codes";
 
 import AppError from "../errorHelpers/AppError";
 import { envVariables } from "../config/env";
-import { Prisma } from "../../../prisma/generated/client";
+import { Prisma } from "../../generated/prisma/client";
 
 const sanitizeError = (error: any) => {
   if (envVariables.NODE_ENV === "production" && error.code?.startsWith("P")) {
